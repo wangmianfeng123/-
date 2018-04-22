@@ -1,0 +1,71 @@
+page { background-color:#fafafa; font-family:Microsoft Yahei; }
+
+.header { width:100%; height:300rpx; }
+
+.content { width:100%; }
+.content-table { margin:30rpx 0; background-color:white; box-shadow:0 5rpx 5rpx #e1e1e1; }
+.content-table-item_wrap { display:flex; align-items:center; width:100%; box-sizing:border-box; padding:0 50rpx; }
+.content-table-item_wrap:before { content: ""; height:12rpx; width:12rpx; margin-right:18rpx; border-radius:6rpx; }
+.content-table-item_wrap:first-child:before { background:#ff6300; }
+.content-table-item_wrap:last-child:before { background:#2ec0a2; }
+.content-table-address, .content-table-time {
+	flex-grow:1; height:100rpx; line-height:100rpx; font-size:30rpx; color:#585964;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.content-table-address { border-bottom:1rpx solid #eee; }
+.content-table-time { border-top:1rpx solid #f6f6f6; }
+.content-table-time:after { content:"改时间"; float: right; color: #bbb; }
+
+.content-btn { display:flex; align-items:center; justify-content:space-between; width:100%; margin-top:30rpx; }
+.content-btn:before, .content-btn:after { content:""; }
+.content-btn-item { display:flex; flex-direction:column; align-items:center; font-size:28rpx; color:#585964; text-align:center; }
+.content-btn-item-image_wrap {
+	display:flex; align-items:center; justify-content:center; width:104rpx; height:104rpx; margin-bottom:16rpx; border-radius:52rpx;
+	background-color:white; box-shadow:0 5rpx 5rpx #e1e1e1; transition:background .2s, box-shadow .3s;
+}
+.content-btn-item_hover .content-btn-item-image_wrap { background-color:#f3f3f3; box-shadow:0 8rpx 8rpx #e1e1e1; }
+.content-btn-item-image_wrap_disabled { background-color:#d3d3d3; box-shadow:0 3rpx 3rpx #ececec; }
+
+.footer {
+	position:absolute; bottom:44rpx; display:flex; align-items:center; width:100%;
+}
+.footer-column_line {
+	width:1rpx; height:40rpx; background:#bbb;
+}
+.footer-customer_service_wrap, .footer-ware_list_wrap {
+	flex-basis:0; flex-grow:1; display:flex; justify-content:center;
+}
+.footer-customer_service, .footer-ware_list {
+	display:flex; align-items:center; font-size:30rpx; color:#888; padding:8rpx;
+}
+.footer-customer_service-image { width:23rpx; height:28rpx; margin-right:3px;  }
+.footer-ware_list-image { width:26rpx; height:30rpx; margin-right:3px; }
+
+
+.time { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; pointer-events:none; z-index:9; }
+.time-bg{ position:absolute; top:0; left:0; width:100%; height:100%; background:black; opacity:0; pointer-events:auto; }
+.time-container{ position:absolute; left:0; bottom:0; width:100%; height:404rpx; overflow:hidden; pointer-events:auto; transform:translateY(100%); }
+.time-container-header { 
+	position:absolute; display:flex; align-items:center; justify-content:space-between; width:100%; height:82rpx; 
+	box-sizing:border-box; padding:0 30rpx; border-top:2rpx solid #ff6300; background:#f3f3f3;
+ }
+.time-container-header-cancel { font-size:34rpx; color:#888; padding:14rpx; }
+.time-container-header-hint { font-size:36rpx; color:#585964; }
+.time-container-header-sure { font-size:34rpx; color:#ff6300; padding:14rpx; }
+.time-container-picker { position:absolute; bottom:0; width:100%; height:322rpx; }
+.time-container-picker-column { line-height:40px; text-align:center; background-color:white;  }
+
+
+.btn_menu { position:absolute; top:21rpx; left:12rpx; width:72rpx; height:72rpx; padding:12rpx; }
+.menu { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:10; }
+.menu-bg{ position:absolute; top:0; left:0; width:100%; height:100%; background:black; opacity:0; }
+.menu-container{ position:absolute; top:0; left:0; width:76.5%; height:100%; background:white; overflow:hidden; transform:translateX(-100%); }
+.menu-container-close { position:absolute; top:0; right:0; padding:24rpx; }
+.menu-container-info { display:flex; justify-content:center; padding:72rpx 0; }
+.menu-container-info-phone { font-size:36rpx; color:#585964; }
+.menu-container-line { width:calc(100% - 42rpx); height:2rpx; margin-left:42rpx; background-color:#eaeaea; }
+.menu-container-item { display:flex; align-items:center; width:100%; height:100rpx; box-sizing:border-box; padding-left:42rpx; }
+.menu-container-item_hover { background-color:#f7f7f7; }
+.menu-container-item-icon { width:36rpx; height:36rpx; margin-right:24rpx; }
+.menu-container-item-text { flex-grow:1; font-size:32rpx; color:#585964; }
+.menu-container-item-into { width:18rpx; height:32rpx; margin-right:36rpx; }

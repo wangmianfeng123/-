@@ -1,0 +1,25 @@
+page { background-color:#fafafa; font-family:Microsoft Yahei; }
+
+.content { display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box; padding:64rpx 48rpx 0; }
+.content-title { font-size:48rpx; color:#585964; }
+.content-tip { font-size:36rpx; color:#888; margin-top:5rpx; }
+.content-countdown { font-size:40rpx; color:#585964; margin-top:90rpx; }
+.content-progress_wrap { width:100%; height:100rpx; margin-top:20rpx; box-sizing:border-box; padding:6rpx; border:2rpx #888 solid; border-radius:8rpx; }
+.content-progress { width:100%; max-width:100%; height:84rpx; border-radius:8rpx; background-color:#ff6300; }
+.content-ware_list { display:flex; align-items:center; margin-top:36rpx; }
+.content-ware_list-image { width:26rpx; height:36rpx; }
+.content-ware_list-text { font-size:32rpx; color:#ff6300; margin-left:11rpx; }
+
+.cancel_order { position:absolute; bottom:72rpx; left:48rpx; width:calc(100% - 96rpx); height:100rpx; line-height:98rpx; box-sizing:border-box; border:1rpx #888 solid; border-radius:8rpx; font-size:32rpx; color:#585964; text-align:center; background-color:white; }
+.cancel_order_hover { background-color:#eee; }
+
+.dialog_wrap { position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.65); }
+.dialog { position:absolute; top:50%; left:10%; display:flex; flex-direction:column; align-items:center; transform:translateY(-60%); padding:48rpx; width:80%; box-sizing:border-box; border-radius:5px; background:white; }
+.dialog-icon { width:108rpx; height:108rpx; min-height:108rpx; }
+.dialog-title { margin-top:40rpx; font-size:44rpx; color:#585964; }
+.dialog-content { margin-top:20rpx; font-size:36rpx; color:#585964; }
+.dialog-btn { display:flex; align-items:center; width:100%; height:100rpx; margin-top:42rpx; }
+.dialog-btn-cancel_order { flex-grow:1; height:100%; line-height:98rpx; font-size:32rpx; color:#585964; text-align:center; box-sizing:border-box; border:1rpx #888 solid; border-radius:8rpx; }
+.dialog-btn-customer_service { flex-grow:1; height:100%; line-height:98rpx; margin-left:48rpx; font-size:32rpx; color:#ff6300; text-align:center; box-sizing:border-box; border:1rpx #ff6300 solid; border-radius:8rpx; }
+.dialog-btn-cancel_order_hover { background-color:#eee; }
+.dialog-btn-customer_service_hover { background-color:#fff0e6; }

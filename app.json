@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/bindPhone/bindPhone",
+    "pages/wareList/wareList",
+    "pages/reserve/reserve",
+    "pages/received/received",
+    "pages/orderSure/orderSure",
+    "pages/finish/finish",
+    "pages/orderList/orderList",
+    "pages/finishDetail/finishDetail"
+  ],
+  "window":{
+    "navigationBarTitleText": "爽点快修",
+    "backgroundColor": "#fafafa"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

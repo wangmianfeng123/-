@@ -1,0 +1,70 @@
+<view class="header_wrap">
+  <view class="header" animation="{{headerAnimation}}">
+    <view class="header-search_wrap" animation="{{headerSearchWrapAnimation}}" bindtap="openSearch">
+      <view class="header-search" animation="{{headerSearchAnimation}}">
+        <image class="header-search-image" src="../../images/search.png"></image>
+        <input class="header-search-input" bindtouchend="openSearch" disabled="{{!inSearch}}" bindinput="searchInput" focus="{{inSearch}}" placeholder="输入想要搜索的商品" placeholder-style="color:#888;" value="{{searchKeyword}}" maxlength="10"/>
+        <icon bindtap="searchClear" type="cancel" size="20" color="#888" hidden="{{!searchKeyword}}"/>
+      </view>
+    </view>
+    <text class="header-cancel" bindtap="closeSearch">取消</text>
+  </view>
+</view>
+
+<view class="content">
+  <scroll-view class="content-categories" scroll-y="true">
+    <text class="content-categories-item {{category.categoryId==categoryId&&'content-categorys-item_choose'}} {{goodType&&'content-categorys-item_type'}}" wx:for="{{categories}}" wx:for-item="category" wx:key="categoryId" data-id="{{category.categoryId}}" bindtap="switchCategory">{{category.categoryName}}</text>
+  </scroll-view>
+  <scroll-view class="content-goods" scroll-y="true">
+      <view class="content-goods-item_wrap {{goodType&&'content-goods-item_wrap_type'}}" wx:for="{{categories[categoryIndex].goods}}" wx:for-item="good" wx:key="goodsId">
+        <view class="content-goods-item">
+          <image class="content-goods-item-image" src="{{good.goodsImg}}"></image>
+          <view class="content-goods-item-info">
+            <text class="content-goods-item-info-name">{{good.goodsName}}</text>
+            <view class="content-goods-item-info-material_price" wx:if="{{good.goodsMaterialPrice}}">
+              <text>含: 商品单价</text><text>{{good.goodsMaterialPrice}}</text>
+            </view>
+            <view class="content-goods-item-info-service_price" wx:if="{{good.goodsServicePrice}}">
+              <text><text style="visibility:hidden">含: </text>服务费用</text><text>{{good.goodsServicePrice}}</text>
+            </view>
+            <view style="flex-grow:1"></view>
+            <text class="content-goods-item-info-price" hidden="{{good.goodsMinPrice}}"><text style="font-size:28rpx;margin-right:2rpx;">¥</text>{{good.goodsPrice}}</text>
+            <view class="content-goods-item-info-minprice" hidden="{{!good.goodsMinPrice}}">
+              <text style="color:#888; margin-right:16rpx;">原价:<text style="text-decoration:line-through;">{{good.goodsPrice}}</text></text>
+              <text style="color:#ff6300;">券后:<text style="margin-left:4rpx; font-size:36rpx;">{{good.goodsMinPrice}}</text></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  <text class="content-bottom">收费标准只供查询不能选择</text>
+  <view class="content-call_wrap" wx:if="{{goodType}}">
+		<view class="content-call" bindtap="placeOrder" hover="true" hover-class="content-call_hover">我要上门服务</view>
+	</view>
+  
+  <view class="content-search" wx:if="{{true}}" animation="{{contentSearchAnimation}}">
+    <view class="content-search-none_tip" hidden="{{searchResult==null||searchResult.length>0}}">
+      <image class="content-search-none_tip-image" src="../../images/search_null.png"></image>
+			<text class="content-search-none_tip-text1">没有搜索结果</text>
+			<text class="content-search-none_tip-text2">换个关键词试试</text>
+		</view>
+    <scroll-view class="content-goods content-search-goods" scroll-y="true">
+      <view class="content-goods-item_wrap content-search-goods-item_wrap {{goodType&&'content-search-goods-item_wrap_type'}}" wx:for="{{searchResult}}" wx:for-item="good" wx:key="goodsId">
+        <view class="content-goods-item">
+          <image class="content-goods-item-image" src="{{good.goodsImg}}"></image>
+          <view class="content-goods-item-info">
+            <text class="content-goods-item-info-name">{{good.goodsName}}</text>
+            <view class="content-goods-item-info-material_price" wx:if="{{good.goodsMaterialPrice}}">
+              <text>含: 商品单价</text><text>{{good.goodsMaterialPrice}}</text>
+            </view>
+            <view class="content-goods-item-info-service_price" wx:if="{{good.goodsServicePrice}}">
+              <text><text style="visibility:hidden">含: </text>服务费用</text><text>{{good.goodsServicePrice}}</text>
+            </view>
+            <view style="flex-grow:1"></view>
+            <text class="content-goods-item-info-price"><text style="font-size:28rpx;margin-right:2rpx;">¥</text>{{good.goodsPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

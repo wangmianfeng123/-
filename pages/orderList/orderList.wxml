@@ -1,0 +1,33 @@
+<scroll-view class="content" scroll-y="true">
+  <view class="content-unfinish" wx:if="{{unfinishList}}">
+    <view class="content-unfinish-title">未完成的订单</view>
+    <view class="content-unfinish-order" data-id="{{order.orderId}}" bindtap="toUnfinishOrder" hover="true" hover-class="content-unfinish-order_hover" wx:for="{{unfinishList}}" wx:for-item="order" wx:key="orderId">
+      <view class="content-unfinish-order-top">
+        <view class="content-unfinish-order-top-time">{{order.reserveDate}}</view>
+        <view class="content-unfinish-order-top-type" style="background:{{order.type=='1' ? '#feac00' : '#ff6300'}};">{{order.type=='0' ? '实时' : (order.type=='1' ? '预约' : '当面')}}</view>
+        <view class="content-unfinish-order-top-status">进行中</view>
+      </view>
+      <view class="content-unfinish-order-address">
+        <image class="content-unfinish-order-address-left" src="../../images/dingwei_{{order.type=='1' ? 'reserve' : 'soon'}}.png" mode="aspectFit"></image>
+        <view class="content-unfinish-order-address-text">{{order.address}}</view>
+        <image class="content-unfinish-order-address-right" src="../../images/order_right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <view class="content-finish" wx:if="{{finishList}}">
+    <view class="content-finish-title">已完成的订单</view>
+    <view class="content-finish-order" data-id="{{order.orderId}}" bindtap="toFinishOrder" hover="true" hover-class="content-finish-order_hover" wx:for="{{finishList}}" wx:for-item="order" wx:key="orderId">
+      <view class="content-finish-order-top">
+        <view class="content-finish-order-top-time">{{order.reserveDate}}</view>
+        <view class="content-finish-order-top-type">{{order.type=='0' ? '实时' : (order.type=='1' ? '预约' : '当面')}}</view>
+        <view class="content-finish-order-top-status">{{order.state==4 ? '未评价' : (order.state==5 ? '已完成' : '已取消')}}</view>
+      </view>
+      <view class="content-finish-order-address">
+        <image class="content-finish-order-address-left" src="../../images/dingwei_finish.png" mode="aspectFit"></image>
+        <view class="content-finish-order-address-text">{{order.address}}</view>
+        <image class="content-finish-order-address-right" src="../../images/info_right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <view class="content-nomore" wx:if="{{unfinishList||finishList}}">没有更多订单了</view>
+</scroll-view>

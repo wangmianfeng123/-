@@ -1,0 +1,37 @@
+<view class="content">
+  <text class="content-title">{{state==4 ? '服务您满意吗' : '感谢您的'+(state==5 ? '评价' : '支持')}}</text>
+  <text class="content-tip">{{state==4 ? '给维修师的服务一点评价吧' : '我们将努力服务得更好'}}</text>
+  <view class="content-info">
+    <view class="content-info-top">
+      <image class="content-info-top-avatar" src="{{mechanicImg}}"></image>
+      <view class="content-info-top-detail">
+        <text class="content-info-top-detail-name">{{mechanicName}}</text>
+        <view class="content-info-top-detail-score">
+          <image class="content-info-top-detail-score-icon" src="../../images/star_{{(mechanicScore*10-mechanicScore*10%10)+(mechanicScore*10%10<=1?0:(mechanicScore*10%10>=9?10:5))}}.png"></image>
+          <text class="content-info-top-detail-score-num">{{mechanicScore}}</text>
+        </view>
+      </view>
+      <image class="content-info-top-call" wx:if="{{false}}" bindtap="callMechanic" src="../../images/call.png"></image>
+    </view>
+    <text class="content-info-pay" wx:if="{{state==4||state==5}}">已支付: <text style="color:#ff6300">{{orderPrice}}</text>元</text>
+    <view class="content-info-dividing_line"></view>
+    <view class="content-info-pos" wx:if="{{state==4||state==5}}" bindtouchstart="{{state==4?'changeScore':''}}" bindtouchmove="{{state==4?'changeScore':''}}" bindtouchend="{{state==4?'changeScore':''}}">
+      <image class="content-info-pos-star" src="../../images/star_{{orderScore>=1?'light':'dark'}}.png"></image>
+      <image class="content-info-pos-star" src="../../images/star_{{orderScore>=2?'light':'dark'}}.png"></image>
+      <image class="content-info-pos-star" src="../../images/star_{{orderScore>=3?'light':'dark'}}.png"></image>
+      <image class="content-info-pos-star" src="../../images/star_{{orderScore>=4?'light':'dark'}}.png"></image>
+      <image class="content-info-pos-star" src="../../images/star_{{orderScore>=5?'light':'dark'}}.png"></image>
+    </view>
+    <text class="content-info-cancel_reason_label" wx:if="{{state==6}}">取消原因:</text>
+    <text class="content-info-cancel_reason" wx:if="{{state==6}}">{{cancelReason}}</text>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="footer-customer_service" bindtap="callCustomerService">
+    <image class="footer-customer_service-image" src="../../images/tel_gray.png"></image>
+    <text class="footer-customer_service-text">联系客服</text>
+  </view>
+  <view class="footer-submit_comment {{orderScore>0 ? '': 'footer-submit_comment_disabled'}}" bindtap="{{orderScore>0 ? 'submitComment' : ''}}" hover="true" hover-class="footer-submit_comment_hover" wx:if="{{state==4}}">提交评论</view>
+  <view class="footer-back_home" bindtap="backHome" hover="true" hover-class="footer-back_home_hover" wx:if="{{state!=4}}">返回首页</view>
+</view>

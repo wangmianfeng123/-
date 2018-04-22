@@ -1,0 +1,88 @@
+<image class="header" src="../../images/banner.jpg"></image>
+
+<view class="content">
+  <view class="content-table">
+		<view class="content-table-item_wrap" bindtap="modifyLocation">
+      <text class="content-table-address" style="{{address ? '' : 'color:#888'}}">{{address ? address : '您需要上门服务的地址'}}</text>
+    </view>
+		<view class="content-table-item_wrap" bindtap="openTime">
+      <text class="content-table-time">{{reserveDate ? reserveDateShow : '现在上门'}}</text>
+    </view>
+  </view>
+
+  <view class="content-btn">
+    <view class="content-btn-item content-btn-battery" hover="true" hover-class="{{address&&'content-btn-item_hover'}}" bindtap="{{address ? 'batteryService': ''}}">
+      <view class="content-btn-item-image_wrap {{address ? '': 'content-btn-item-image_wrap_disabled'}}">
+        <image src="../../images/battery{{address ? '': '_unable'}}.png" mode="aspectFit" style="width:46rpx; height:46rpx;"></image>
+      </view>我要更换电池
+    </view>
+    <view class="content-btn-item content-btn-tyre" hover="true" hover-class="{{address&&'content-btn-item_hover'}}" bindtap="{{address ? 'tyreService': ''}}">
+      <view class="content-btn-item-image_wrap {{address ? '': 'content-btn-item-image_wrap_disabled'}}">
+        <image src="../../images/tyre{{address ? '': '_unable'}}.png" mode="aspectFit" style="width:46rpx; height:46rpx;"></image>
+      </view>我要更换轮胎
+    </view>
+    <view class="content-btn-item content-btn-call" hover="true" hover-class="{{address&&'content-btn-item_hover'}}" bindtap="{{address ? 'placeOrder': ''}}">
+      <view class="content-btn-item-image_wrap {{address ? '': 'content-btn-item-image_wrap_disabled'}}">
+        <image src="../../images/service{{address ? '': '_unable'}}.png" mode="aspectFit" style="width:46rpx; height:46rpx;"></image>
+      </view>我要上门服务
+    </view>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="footer-customer_service_wrap">
+    <view class="footer-customer_service" bindtap="callCustomerService">
+      <image class="footer-customer_service-image" src="../../images/pel.png"></image>我要电话下单
+    </view>
+  </view>
+  <view class="footer-column_line"></view>
+  <view class="footer-ware_list_wrap">
+    <view class="footer-ware_list" bindtap="toWareList">
+      <image class="footer-ware_list-image" src="../../images/price.png"></image>价目表
+    </view>
+  </view>
+</view>
+
+<view class="time">
+  <view class="time-bg" bindtap="closeTime" animation="{{time_bg_animation}}" hidden="{{time_hidden}}"></view>
+  <view class="time-container" animation="{{time_container_animation}}">
+    <view class="time-container-header">
+      <view class="time-container-header-cancel" bindtap="closeTime">取消</view>
+      <view class="time-container-header-hint">选择服务时间</view>
+      <view class="time-container-header-sure" bindtap="sureTime">确定</view>
+    </view>
+    <picker-view class="time-container-picker" indicator-style="height:40px;" value="{{timeValue}}" bindchange="onTimeChange">
+      <picker-view-column class="time-container-picker-column">
+        <view wx:for="{{dateArray}}">{{item==0 ? '今天' : '明天'}}</view>
+      </picker-view-column>
+      <picker-view-column class="time-container-picker-column">
+        <view wx:for="{{hourArray}}">{{item==-1 ? '现在' : (item<10? '0'+item : item)+'时'}}</view>
+      </picker-view-column>
+      <picker-view-column class="time-container-picker-column">
+        <view wx:for="{{minuteArray}}">{{item==0 ? '00' : item}}分</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+
+<image class="btn_menu" bindtap="openMenu" src="../../images/personal.png"></image>
+<view class="menu" hidden="{{menu_hidden}}">
+  <view class="menu-bg" bindtap="closeMenu" animation="{{menu_bg_animation}}"></view>
+  <view class="menu-container" animation="{{menu_container_animation}}">
+    <icon class="menu-container-close" bindtap="closeMenu" type="cancel" size="25" color="#ccc" />
+    <view class="menu-container-info">
+      <text class="menu-container-info-phone">{{username}}</text>
+    </view>
+    <view class="menu-container-line"></view>
+    <view class="menu-container-item" bindtap="myOrder" hover="true" hover-class="menu-container-item_hover">
+      <image class="menu-container-item-icon" src="../../images/info_order.png" mode="aspectFit"></image>
+      <text class="menu-container-item-text">我的订单</text>
+      <image class="menu-container-item-into" src="../../images/info_right.png" mode="aspectFit"></image>
+    </view>
+    <view class="menu-container-item" bindtap="logout" hover="true" hover-class="menu-container-item_hover">
+      <image class="menu-container-item-icon" src="../../images/logout.png" mode="aspectFit"></image>
+      <text class="menu-container-item-text">退出登录</text>
+      <image class="menu-container-item-into" src="../../images/info_right.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>

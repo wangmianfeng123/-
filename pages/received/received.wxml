@@ -1,0 +1,32 @@
+<view class="content">
+  <text class="content-title">{{underRepair ? '维修师已开始维修，请稍等' : '维修师已接单, 准备上门'}}</text>
+  <text class="content-tip">{{underRepair ? '无特殊情况请不要取消订单' : '请您保持手机畅通'}}</text>
+  <view class="content-info">
+    <view class="content-info-top">
+      <image class="content-info-top-avatar" src="{{mechanicImg}}"></image>
+      <view class="content-info-top-detail">
+        <text class="content-info-top-detail-name">{{mechanicName}}</text>
+        <view class="content-info-top-detail-score">
+          <image class="content-info-top-detail-score-icon" src="../../images/star_{{(mechanicScore*10-mechanicScore*10%10)+(mechanicScore*10%10<=1?0:(mechanicScore*10%10>=9?10:5))}}.png"></image>
+          <text class="content-info-top-detail-score-num">{{mechanicScore}}</text>
+        </view>
+      </view>
+      <image class="content-info-top-call" bindtap="callMechanic" src="../../images/call.png"></image>
+    </view>
+    <text class="content-info-bottom" style="{{underRepair ? 'font-size:28rpx' : ''}}">{{underRepair ? '维修费用以最终实际的服务内容为准' : '维修师与您的总距离: '+distance}}</text>
+  </view>
+  <navigator class="content-ware_list" url="../wareList/wareList?orderId={{orderId}}" hover-class="none">
+    <image class="content-ware_list-image" src="../../images/form.png"></image>
+    <text class="content-ware_list-text">价目表</text>
+  </navigator>
+</view>
+
+<view class="footer">
+  <view class="footer-customer_service" bindtap="callCustomerService">
+    <image class="footer-customer_service-image" src="../../images/tel_gray.png"></image>
+    <text class="footer-customer_service-text">联系客服</text>
+  </view>
+  <picker style="width:100%" bindchange="cancelOrder" range="{{cancelReason}}" range-key="name">
+    <view class="footer-cancel_order" hover="true" hover-class="footer-cancel_order_hover">取消订单</view>
+  </picker>
+</view>

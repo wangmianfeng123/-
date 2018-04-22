@@ -1,0 +1,16 @@
+<view class="content">
+  <text class="content-tip">填写手机号, 方便维修师与您联系</text>
+  <form class="content-form" bindsubmit="formSubmit">
+    <view class="content-form-phone_wrap"> 
+      <input class="content-form-phone_wrap-phone" name="phone" bindinput="phoneInput" type="number" maxlength="11" placeholder="输入手机号" placeholder-style="color:#bbb;"/>
+      <view class="content-form-phone_wrap-validate {{(phone[0] == 1 && phone.length == 11 && delayTime <= 0) ? '': 'content-form-phone_wrap-validate_disabled'}}" hover="true" hover-class="content-form-phone_wrap-validate_hover" bindtap="{{(phone[0] == 1 && phone.length == 11 && delayTime <= 0) ? 'validate': ''}}" >{{delayTime > 0 ? delayTime+' s' : '获取验证码'}}</view>
+    </view>
+    <input class="content-form-code" name="code" bindinput="codeInput" type="number" maxlength="4" placeholder="短信验证码" placeholder-style="color:#bbb;"/>
+    <button class="content-form-btn_submit {{(phone[0] == 1 && phone.length == 11 && code.length == 4) ? '': 'content-form-btn_submit_disabled'}}" hover-class="content-form-btn_submit_hover" form-type="{{(phone[0] == 1 && phone.length == 11 && code.length == 4) ? 'submit': ''}}">登录</button>
+  </form>
+</view>
+
+<view class="customer_service" bindtap="callCustomerService">
+  <image class="customer_service-image" src="../../images/tel_gray.png"></image>
+  <text class="customer_service-text">联系客服</text>
+</view>

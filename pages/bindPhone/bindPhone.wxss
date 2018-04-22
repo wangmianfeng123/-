@@ -1,0 +1,22 @@
+page { background-color:#fafafa; font-family:Microsoft Yahei; }
+
+.content { display:flex; width:100%; box-sizing:border-box; padding:72rpx 48rpx 0; flex-direction:column; align-items:center; }
+.content-tip { font-size:42rpx; color:#585964; }
+.content-form { width:100%; margin-top:72rpx; }
+.content-form-phone_wrap { display:flex; align-items:center; width:100%; }
+.content-form-phone_wrap-phone { flex-grow:1; height:100rpx; box-sizing:border-box; padding:0 24rpx; border-radius:8rpx; border:1rpx solid #ccc; background-color:white; font-size:30rpx; color:#585964; }
+.content-form-phone_wrap-validate { width:192rpx; height:100rpx; line-height:100rpx; margin-left:24rpx; box-sizing:border-box; white-space:nowrap; font-size:30rpx; color:white; border-radius:8rpx; background-color:#ff6300; text-align:center; }
+.content-form-phone_wrap-validate_hover { background-color:#ff4d00; }
+.content-form-phone_wrap-validate_disabled { background-color:#bbb; }
+
+.content-form-code { width:100%; height:100rpx; margin-top:24rpx; box-sizing:border-box; padding:0 24rpx; border-radius:8rpx; border:1rpx solid #ccc; background-color:white; font-size:30rpx; color:#585964; }
+
+.content-form-btn_submit { width:100%; height:100rpx; margin-top:24rpx; line-height:100rpx; font-size:36rpx; color:white; border-radius:8rpx; background-color:#ff6300; text-align:center; }
+.content-form-btn_submit::after { border:none; }
+.content-form-btn_submit_hover { background-color:#ff4d00; }
+.content-form-btn_submit_disabled { background-color:#bbb; }
+
+
+.customer_service { display:flex; align-items:center; justify-content:center; position:absolute; bottom:70rpx; width:100%; }
+.customer_service-image { width:36rpx; height:36rpx; }
+.customer_service-text { font-size:32rpx; color:#888; margin-left:10rpx; }

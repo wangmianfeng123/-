@@ -1,0 +1,48 @@
+page { background-color:#fafafa; font-family:Microsoft Yahei; box-sizing:border-box; padding:0 48rpx; }
+
+.header { display:flex; align-items:center; justify-content:flex-start; width:100%; height:168rpx; }
+.header-avatar { width:118rpx; min-width:118rpx; height:118rpx; border-radius:59rpx; }
+.header-detail { display:flex; flex-direction:column; justify-content:space-around; height:60%; margin-left:40rpx; }
+.header-detail-name { font-size:28rpx; color:#585964; }
+.header-detail-score { display:flex; align-items:center; }
+.header-detail-score-icon { width:134rpx; height:23rpx; }
+.header-detail-score-num { height:30rpx; margin-left:8rpx; font-size:23rpx; color:#b1b1b1; }
+
+.finish { width:100%; }
+.finish-bill { display:flex; flex-direction:column; align-items:center; width:100%; }
+.finish-bill-title { display:flex; align-items:center; width:100%; font-size:28rpx; color:#ccc; }
+.finish-bill-title::before { flex-grow:1; content:''; height:2rpx; margin-right:22rpx; background-color:#ccc; }
+.finish-bill-title::after { flex-grow:1; content:''; height:2rpx; margin-left:22rpx; background-color:#ccc; }
+.finish-bill-pay { font-size:48rpx; color:#ff6300; padding:8rpx 0; }
+.finish-bill-detail-item { display:flex; flex-direction:column; width:100%; }
+.finish-bill-detail-item:not(:last-child) { margin-bottom:26rpx; }
+.finish-bill-detail-item-main { display:flex; align-items:center; width:100%; font-size:28rpx; color:black; }
+.finish-bill-detail-item-main::before { content:''; align-self:flex-start; display:block; width:10rpx; min-width:10rpx; height:10rpx; margin-top:14rpx; border-radius:5rpx; background-color:#ff6300; }
+.finish-bill-detail-item-main-name { flex-grow:1; padding:0 12rpx; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+.finish-bill-detail-item-main-count { width:60rpx; min-width:60rpx; }
+.finish-bill-detail-item-main-price { width:150rpx; min-width:150rpx; text-align:right; }
+.finish-bill-detail-item-material_price, .finish-bill-detail-item-service_price { display:flex; justify-content:space-between; margin-left:22rpx; margin-top:2rpx; font-size:28rpx; color:#888; }
+.finish-bill-total { display:flex; align-items:baseline; width:100%; margin-top:25rpx; font-size:28rpx; color:#ff6300; }
+.finish-bill-coupon { display:flex; align-items:baseline; width:100%; margin-top:25rpx; font-size:28rpx; color:#ff6300; }
+
+.finish-evaluate { display:flex; flex-direction:column; align-items:center; width:100%; margin-top:36rpx; }
+.finish-evaluate-title { display:flex; align-items:center; width:100%; font-size:28rpx; color:#ccc; }
+.finish-evaluate-title::before { flex-grow:1; content:''; height:2rpx; margin-right:22rpx; background-color:#ccc; }
+.finish-evaluate-title::after { flex-grow:1; content:''; height:2rpx; margin-left:22rpx; background-color:#ccc; }
+.finish-evaluate-star_wrap { margin-top:18rpx; display:flex; align-items:center; }
+.finish-evaluate-star { width:29px; min-width:29px; height:27px; margin:0 7px; }
+
+.cancel { display:flex; flex-direction:column; align-items:center; width:100%; }
+.cancel-title { display:flex; align-items:center; width:100%; font-size:28rpx; color:#ccc; }
+.cancel-title::before { flex-grow:1; content:''; height:2rpx; margin-right:22rpx; background-color:#ccc; }
+.cancel-title::after { flex-grow:1; content:''; height:2rpx; margin-left:22rpx; background-color:#ccc; }
+.cancel-label { font-size:28rpx; color:#888; margin-top:24rpx; }
+.cancel-reason { font-size:34rpx; color:#585964; margin-top:12rpx; }
+
+
+.footer { position:absolute; bottom:72rpx; left:48rpx; display:flex; flex-direction:column; align-items:center; width:calc(100% - 96rpx); }
+.footer-customer_service { display:flex; align-items:center; }
+.footer-customer_service-image { width:36rpx; height:36rpx; }
+.footer-customer_service-text { font-size:32rpx; color:#888; margin-left:10rpx; }
+.footer-back_home { width:100%; height:100rpx; line-height:98rpx; margin-top:40rpx; box-sizing:border-box; border:1rpx #ff6300 solid; border-radius:8rpx; font-size:32rpx; color:#ff6300; text-align:center; background-color:white; }
+.footer-back_home_hover { background-color:#fff0e6; }

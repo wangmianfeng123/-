@@ -1,0 +1,55 @@
+page { width:100%; height:100%; background-color:#fafafa; font-family:Microsoft Yahei; }
+
+.header_wrap { position:absolute; width:100%; overflow:hidden; z-index:10; }
+.header { width:calc(100% + 96rpx); height:88rpx; box-sizing:border-box; padding:14rpx 24rpx; background-color:#eaeaea; }
+.header-search_wrap { display:inline-flex; align-items:center; width:calc(100% - 96rpx); height:100%; box-sizing:border-box; padding:0 24rpx; border-radius:8rpx; background-color:white; }
+.header-search { display:flex; align-items:center; width:100%; transform:translateX(144rpx); }
+.header-search-image { width:34rpx; min-width:34rpx; height:34rpx; }
+.header-search-input { flex-grow:1; margin:0 12rpx; font-size:36rpx; color:#585964; }
+.header-cancel { width:72rpx; margin-left:24rpx; font-size:36rpx; color:#585964; white-space:nowrap; }
+
+
+.content { position:absolute; top:88rpx; display:flex; width:100%; height:calc(100% - 88rpx); }
+
+.content-categories { width:160rpx; min-width:160rpx; height:100%; }
+::scrollbar { width:0; height:0; color:transparent; }
+.content-categories-item { display:flex; align-items:center; width:100%; height:108rpx; box-sizing:border-box; padding-left:26rpx;border-bottom:2rpx #eaeaea solid; border-right:2rpx #eaeaea solid; font-size:30rpx; color:black; background-color:#f8f8f8; }
+.content-categories-item:last-child::after { align-self:flex-start; content:''; display:block; width:0rpx; height:108rpx; padding-bottom:76rpx; }
+.content-categories-item_type:last-child::after { padding-bottom:130rpx; }
+.content-categorys-item_choose { padding-left:18rpx; border-left:8rpx #ff6300 solid; border-right:none; background-color:white; }
+.content-goods { flex-grow:1; height:100%; box-sizing:border-box; background-color:white; }
+.content-goods-item_wrap { width:100%; background-color:white; }
+.content-goods-item { display:flex; width:100%; box-sizing:border-box; padding:0 24rpx; }
+.content-goods-item-image { width:160rpx; min-width:160rpx; height:160rpx; margin:24rpx 16rpx 24rpx 0; }
+.content-goods-item-info { flex-grow:1; display:flex; flex-direction:column; min-height:176rpx; margin:18rpx 0 22rpx; }
+.content-goods-item-info-name { font-size:28rpx; color:black; }
+.content-goods-item-info-material_price { display:flex; justify-content:space-between; margin-top:12rpx; font-size:26rpx; color:#888; }
+.content-goods-item-info-service_price { display:flex; justify-content:space-between; font-size:26rpx; color:#888; }
+.content-goods-item-info-price { margin-top:20rpx; font-size:36rpx; color:#ff6300; }
+.content-goods-item-info-minprice { display:flex; align-items:baseline; flex-wrap:wrap; margin-top:20rpx; font-size:28rpx; }
+.content-goods-item_wrap::after { content:''; display:block; width:calc(100% - 24rpx); height:2rpx; margin-left:24rpx; background-color:#eaeaea; }
+.content-goods-item_wrap:last-child::after { margin-bottom:76rpx; }
+.content-goods-item_wrap_type:last-child::after { margin-bottom:130rpx; }
+.content-bottom { 
+    position:absolute; left:0; bottom:0; width:100%; height:76rpx; line-height:76rpx; font-size:30rpx; color:white; 
+    text-align:center; background-color:rgba(0,0,0,.75);
+}
+.content-call_wrap {
+	position:absolute; left:0; bottom:0; width:100%; height:130rpx; box-sizing:border-box; padding:20rpx; background:white;
+	box-shadow:0 0rpx 15rpx #ccc; z-index: 10;
+}
+.content-call {
+	width:100%; height:90rpx; line-height:90rpx; border-radius:4rpx; background:#ff924c; color:white; font-size:30rpx;
+    text-align:center; box-shadow:0 5rpx 10rpx #ccc;
+}
+.content-call_hover { background:#ee823c; }
+
+
+.content-search { position:absolute; left:0; width:100%; height:100%; box-sizing:border-box; border-top:2rpx #ccc solid; background-color:#fafafa; transform:translateY(-100%); }
+.content-search-none_tip { position:absolute; top:300rpx; display:flex; flex-direction:column; align-items:center; width:100%; }
+.content-search-none_tip-image { width:175rpx; height:152rpx; min-height:152rpx; }
+.content-search-none_tip-text1 { margin-top:28rpx; font-size:34rpx; color:#888; }
+.content-search-none_tip-text2 { margin-top:16rpx; font-size:28rpx; color:#888; }
+.content-search-goods { background-color:#fafafa; }
+.content-search-goods-item_wrap:last-child::after { width:100%; margin-left:0; margin-bottom:0; }
+.content-search-goods-item_wrap_type:last-child::after { margin-bottom:130rpx; }

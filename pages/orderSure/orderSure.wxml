@@ -1,0 +1,40 @@
+<view class="content">
+  <text class="content-title">请您确认并支付维修费</text>
+  <text class="content-tip">还可请维修师代付</text>
+  <view class="content-info">
+    <text class="content-info-title">维修服务费详情</text>
+    <scroll-view class="content-info-detail" style="height:{{scrollViewHeight}}" scroll-y="true">
+      <view class="content-info-detail-item" wx:for="{{goods}}" wx:for-item="good">
+        <view class="content-info-detail-item-main">
+          <text class="content-info-detail-item-main-name">{{good.goodsName}}</text>
+          <text class="content-info-detail-item-main-count">×{{good.goodsCount}}</text>
+          <text class="content-info-detail-item-main-price">{{good.goodsPrice}}元</text>
+        </view>
+        <view class="content-info-detail-item-material_price" wx:if="{{good.goodsMaterialPrice}}">
+          <text>含: 商品单价</text><text>{{good.goodsMaterialPrice}}</text>
+        </view>
+        <view class="content-info-detail-item-service_price" wx:if="{{good.goodsServicePrice}}">
+          <text><text style="visibility:hidden">含: </text>服务费用</text><text>{{good.goodsServicePrice}}</text>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="content-info-total">
+      <text style="flex-grow:1">费用合计</text>
+      <text>{{orderTotal}}<text style="font-size:28rpx">元</text></text>
+    </view>
+    <view class="content-info-coupon" wx:if="{{couponDiscount}}">
+      <text style="flex-grow:1">优惠券</text>
+      <text>-{{couponDiscount}}元</text>
+    </view>
+  </view>
+  <navigator class="content-ware_list" url="../wareList/wareList?orderId={{orderId}}" hover-class="none">
+    <image class="content-ware_list-image" src="../../images/form.png"></image>
+    <text class="content-ware_list-text">价目表</text>
+  </navigator>
+  <view style="flex-grow:1;"></view>
+  <view class="content-customer_service" bindtap="callCustomerService">
+    <image class="content-customer_service-image" src="../../images/tel_gray.png"></image>
+    <text class="content-customer_service-text">联系客服</text>
+  </view>
+  <view class="content-sure_order" bindtap="sureOrder" hover="true" hover-class="content-sure_order_hover">确认支付{{orderPrice}}元</view>
+</view>

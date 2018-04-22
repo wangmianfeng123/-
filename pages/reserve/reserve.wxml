@@ -1,0 +1,25 @@
+<view class="content">
+  <text class="content-title">正在为您预约附近的维修师</text>
+  <text class="content-tip">请耐心等待</text>
+  <text class="content-countdown">{{countdown}}</text>
+  <view class="content-progress_wrap">
+    <view class="content-progress" style="width:calc(100% * {{progressDecimal}})"></view>
+  </view>
+  <navigator class="content-ware_list" url="../wareList/wareList?orderId={{orderId}}" hover-class="none">
+    <image class="content-ware_list-image" src="../../images/form.png"></image>
+    <text class="content-ware_list-text">价目表</text>
+  </navigator>
+</view>
+<view class="cancel_order" bindtap="cancelOrderTip" hover="true" hover-class="cancel_order_hover">取消订单</view>
+
+<view class="dialog_wrap" wx:if="{{showDialog}}">
+  <view class="dialog">
+    <image class="dialog-icon" src="../../images/warn.png"></image>
+    <text class="dialog-title">暂无人接单</text>
+    <text class="dialog-content">是否联系客服安排维修师</text>
+    <view class="dialog-btn">
+      <view class="dialog-btn-cancel_order" bindtap="cancelOrder" hover="true" hover-class="dialog-btn-cancel_order_hover">取消订单</view>
+      <view class="dialog-btn-customer_service" bindtap="callCustomerService" hover="true" hover-class="dialog-btn-customer_service_hover">联系客服</view>
+    </view>
+  </view>
+</view>
